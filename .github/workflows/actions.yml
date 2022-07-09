@@ -1,7 +1,9 @@
 name: Actions Workflow
 
 on:
-  push:
+  # push:
+  schedule:
+    - cron: "0/5 * * * *"
   pull_request:
     types: [closed,assigned,opened,reopened]  
 
@@ -22,7 +24,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v1    
 
-      - name: list files after checkout
+      - name: list files afte checkout
         run: |
           pwd
           ls -a  
