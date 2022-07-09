@@ -22,7 +22,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v1    
 
-      - name: list files after checkout
+      - name: list files afte checkout
         run: |
           pwd
           ls -a  
