@@ -8,7 +8,16 @@ jobs:
       matrix:
         os: [ubuntu-latest,windows-latest,macos-latest]
         node_ver: [6,7,8]
+        include:
+          - os: ubuntu-latest
+            node_ver: 8
+            is_ubuntu_8: true
+        exclude:
+          - os: ubuntu-latest
+            node_ver: 6
     runs-on: ${{matrix.os}}
+    env: 
+      is_ubutn: ${{matrix.is_ubuntu_8}}
     steps:
       - name: nodee --version
         run: node -v 
@@ -18,5 +27,8 @@ jobs:
           node-version: ${{matrix.node_ver}}
 
       - name: nodee --version
-        run: node -v 
+        run: |
+          node -v
+          echo $is_ubutn 
+
      
