@@ -24,6 +24,13 @@ jobs:
         with:
           entrypoint: /usr/local/bin/node
           args: -v
+
+      - uses: actions/checkout@v1
+      - name: RUn scipt 
+        uses: docker://node:12.14.1-alpine3.10
+        with:
+          entrypoint: ./script.sh
+          args: "some string"
               
 
   
