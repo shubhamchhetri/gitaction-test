@@ -1,0 +1,18 @@
+name: Martrix WF  
+
+on: push
+
+jobs:
+  node-version:
+    runs-on: ubuntu-latest
+    steps:
+      - name: nodee --version
+        run: node -v 
+
+      - name: actions/setup-node@v1 
+        with:   
+          node-version: 6
+          
+      - name: nodee --version
+        run: node -v 
+     
