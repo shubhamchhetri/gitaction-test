@@ -9,10 +9,10 @@ jobs:
       - name: nodee --version
         run: node -v 
 
-      - name: actions/setup-node@v1 
+      - uses: actions/setup-node@v1 
         with:   
           node-version: 6
-          
+
       - name: nodee --version
         run: node -v 
      
